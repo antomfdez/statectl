@@ -27,3 +27,8 @@ cd statectl
 sudo chmod +x installer.sh
 sudo ./installer.sh
 ```
+## Screenshots
+
+![App Screenshot](https://github.com/antomfdez/statectl/state.png)
+
+
