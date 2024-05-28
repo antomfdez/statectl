@@ -29,6 +29,6 @@ sudo ./installer.sh
 ```
 ## Screenshots
 
-![App Screenshot](https://github.com/antomfdez/statectl/state.png)
+![App Screenshot](https://github.com/antomfdez/statectl/blob/main/state.png)
 
 
