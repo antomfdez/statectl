@@ -6,26 +6,26 @@ use colored::Colorize;
 
 fn hibernate() {
     println!("\n{}\n", "Hibernating system...".cyan().bold());
-    let _command = Command::new("bash")
+    let _hibernate = Command::new("bash")
         .arg("-c")
-        .arg("sleep 3 && echo disk | tee /sys/power/state")
-        .spawn();
+        .arg("sleep 3 && echo disk | sudo tee /sys/power/state")
+        .output();
 }
 
 fn sleep() {
     println!("\n{}\n", "Sleeping system...".cyan().bold());
-    let _command = Command::new("bash")
+    let _sleep = Command::new("bash")
         .arg("-c")
-        .arg("sleep 3 && echo deep | tee /sys/power/mem_sleep && echo mem | sudo tee /sys/power/state")
-        .spawn();
+        .arg("echo deep | sudo tee /sys/power/mem_sleep && sleep 3 && echo mem | sudo tee /sys/power/state")
+        .output();
 }
 
 fn freeze() {
     println!("\n{}\n", "Freezing system...".cyan().bold());
-    let _command = Command::new("bash")
+    let _freeze = Command::new("bash")
         .arg("-c")
-        .arg("sleep 3 && echo freeze | tee /sys/power/state")
-        .spawn();
+        .arg("sleep 3 && echo freeze | sudo tee /sys/power/state")
+        .output();
 }
 
 fn out_of_range(name: String) {
